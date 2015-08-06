@@ -1,19 +1,19 @@
 //
-//  RedViewController.swift
+//  OrangeViewController.swift
 //  TemplateProject
 //
-//  Created by Trisha Dwivedi on 8/5/15.
+//  Created by Trisha Dwivedi on 8/6/15.
 //  Copyright (c) 2015 Make School. All rights reserved.
 //
 
 import UIKit
 import RealmSwift
 
-class RedViewController: UIViewController {
-
+class OrangeViewController: UIViewController {
+    
     @IBOutlet weak var groupName: UILabel!
     
-    @IBOutlet weak var redTableView: UITableView!
+    @IBOutlet weak var orangeTableView: UITableView!
     
     var aaaGroupName = ""
     var newTaskName = ""
@@ -24,7 +24,7 @@ class RedViewController: UIViewController {
     var tasks: Results<ATask>! {
         didSet {
             // Whenever notes update, update the table view
-            redTableView?.reloadData()
+            orangeTableView?.reloadData()
         }
     }
     
@@ -33,11 +33,11 @@ class RedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         groupName.text = aaaGroupName
-        redTableView.dataSource = self
-        redTableView.delegate = self
+        orangeTableView.dataSource = self
+        orangeTableView.delegate = self
         //let realm = Realm()
         /*realm.write() {
-            realm.add(self.aaaGroupName) //currentTask
+        realm.add(self.aaaGroupName) //currentTask
         }*/
         // Do any additional setup after loading the view.
     }
@@ -46,12 +46,12 @@ class RedViewController: UIViewController {
         let realm = Realm()
         /*group.groupName = aaaGroupName
         realm.write() {
-            realm.add(self.group)
+        realm.add(self.group)
         }*/
         tasks = realm.objects(ATask)
         super.viewWillAppear(animated)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -80,23 +80,23 @@ class RedViewController: UIViewController {
             tasks = realm.objects(ATask)
         }
     }
-
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
 
-extension RedViewController: UITableViewDataSource {
+extension OrangeViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("TaskCell", forIndexPath: indexPath) as! RedTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("OrangeTaskCell", forIndexPath: indexPath) as! OrangeTableViewCell
         
         let row = indexPath.row
         let task = tasks[row] as ATask
@@ -113,7 +113,7 @@ extension RedViewController: UITableViewDataSource {
     
 }
 
-extension RedViewController: UITableViewDelegate {
+extension OrangeViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selectedTask = tasks[indexPath.row]
@@ -134,7 +134,7 @@ extension RedViewController: UITableViewDelegate {
             realm.write() {
                 realm.delete(task)
             }
-
+            
             tasks = realm.objects(ATask)
         }
     }

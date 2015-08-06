@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import RealmSwift
 
 class RedTableViewCell: UITableViewCell {
 
     @IBOutlet weak var taskLabel: UILabel!
     
     @IBOutlet weak var endDateLabel: UILabel!
+    
+    @IBOutlet weak var checkedButton: UIButton!
+    
+    var checked: Bool?
     
     var task: ATask? {
         didSet {
@@ -22,6 +27,18 @@ class RedTableViewCell: UITableViewCell {
             }
         }
     }
+    
+    @IBAction func checkedButtonTapped(sender: AnyObject) {
+        if !checked! {
+            checkedButton.setImage(UIImage(named: "checked_box"), forState: .Normal)
+            checked = true
+        }
+        else {
+            checkedButton.setImage(UIImage(named: "unchecked_box"), forState: .Normal)
+            checked = false
+        }
+    }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

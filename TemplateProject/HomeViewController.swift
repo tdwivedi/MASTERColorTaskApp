@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import RealmSwift
+import RealmSwift
 
 class HomeViewController: UIViewController {
 
@@ -35,10 +35,10 @@ class HomeViewController: UIViewController {
     
     var selectedGroup:AGroup!
     
-    /*var groups: Results<AGroup>! {
+    var groups: Results<AGroup>! {
         didSet {
         }
-    }*/
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,15 +53,18 @@ class HomeViewController: UIViewController {
     
     @IBAction func unwindToSegue(segue: UIStoryboardSegue) {
         if let identifier = segue.identifier {
-            //let realm = Realm()
+            let realm = Realm()
             switch identifier {
             case "Add":
                 let source = segue.sourceViewController as! NewGroupViewController
                 newChosenColor = source.chosenColor
                 newGroupName = source.groupNameTextField.text
-                /*realm.write {
-                    realm.add(source.currentGroup!)
-                }*/
+                
+                //write?!
+                realm.write {
+                    realm.add(source.currentGroup)
+                }
+                
                 println(newChosenColor)
                 println(newGroupName)
             case "Back":
@@ -69,10 +72,11 @@ class HomeViewController: UIViewController {
             case "Delete":
                 let source = segue.sourceViewController as! DeleteGroupViewController
                 groupToDelete = source.deleteGroupTextField.text
+                
             default:
                 println("o k")
             }
-            //groups = realm.objects(AGroup)
+            groups = realm.objects(AGroup)
         }
     }
     
@@ -86,13 +90,32 @@ class HomeViewController: UIViewController {
         if segue.identifier == "Red" {
             if newChosenColor == "Red" {
                 let destination = segue.destinationViewController as! RedViewController
+                destination.aaaGroupName = newGroupName
                 //destination.groupName.text = newGroupName
                 destination.aaaGroupName = newGroupName
-                
+                let realm = Realm()
+                destination.group = AGroup()
+                destination.aaaGroupName = newGroupName
+                destination.group.groupName = newGroupName
+                realm.write() {
+                    realm.add(destination.group)
+                }
             }
         }
         if segue.identifier == "Orange" {
-            
+            if newChosenColor == "Orange" {
+                let destination = segue.destinationViewController as! OrangeViewController
+                destination.aaaGroupName = newGroupName
+                //destination.groupName.text = newGroupName
+                destination.aaaGroupName = newGroupName
+                let realm = Realm()
+                destination.group = AGroup()
+                destination.aaaGroupName = newGroupName
+                destination.group.groupName = newGroupName
+                realm.write() {
+                    realm.add(destination.group)
+                }
+            }
         }
         if segue.identifier == "Yellow" {
             
