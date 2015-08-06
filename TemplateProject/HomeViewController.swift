@@ -14,11 +14,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var toDoLabel: UILabel!
     
     @IBOutlet weak var redButton: UIButton!
-    @IBAction func redButtonTapped(sender: AnyObject) {
-        if newChosenColor == "Red" {
-            //let destination = redButton.
-        }
-    }
     
     @IBOutlet weak var orangeButton: UIButton!
     @IBOutlet weak var yellowButton: UIButton!
