@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Mixpanel
 
 class YellowNewTaskViewController: UIViewController, UITextFieldDelegate {
 
@@ -16,14 +17,11 @@ class YellowNewTaskViewController: UIViewController, UITextFieldDelegate {
     
     var currentTask:YTask!
     
-    /*// MARK: - Navigation
+    @IBAction func addButtonTapped(sender: AnyObject) {
+        let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+        mixpanel.track("Add Yellow button tapped")
+    }
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }*/
     
     override func viewDidLoad() {
         super.viewDidLoad()

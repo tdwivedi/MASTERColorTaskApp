@@ -52,10 +52,12 @@ code_sign_if_enabled() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework 'Pods-TemplateProject/Mixpanel.framework'
   install_framework 'Pods-TemplateProject/Realm.framework'
   install_framework 'Pods-TemplateProject/RealmSwift.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework 'Pods-TemplateProject/Mixpanel.framework'
   install_framework 'Pods-TemplateProject/Realm.framework'
   install_framework 'Pods-TemplateProject/RealmSwift.framework'
 fi

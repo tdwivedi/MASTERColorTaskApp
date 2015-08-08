@@ -10,8 +10,9 @@ import Foundation
 import RealmSwift
 
 class ATask: Object { //Object (for realm)
-
+    
     dynamic var taskContent = ""
     dynamic var endDateContent = ""
-
+    //dynamic var isDone = false
+    
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Mixpanel
 
 class RedTableViewCell: UITableViewCell {
 
@@ -43,6 +44,8 @@ class RedTableViewCell: UITableViewCell {
                 task?.isDone = false
             }
         }*/
+        let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+        mixpanel.track("Checkbox Red button tapped")
         if self.task?.isDone == false {
             Realm().write {
                 self.checkedButton.setImage(UIImage(named: "checked_box"), forState: .Normal)

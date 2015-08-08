@@ -1,4 +1,7 @@
 PODS:
+  - Mixpanel (2.8.2):
+    - Mixpanel/Mixpanel (= 2.8.2)
+  - Mixpanel/Mixpanel (2.8.2)
   - Realm (0.92.4):
     - Realm/Headers (= 0.92.4)
   - Realm/Headers (0.92.4)
@@ -6,9 +9,11 @@ PODS:
     - Realm (= 0.92.4)
 
 DEPENDENCIES:
+  - Mixpanel
   - RealmSwift (~> 0.92.2)
 
 SPEC CHECKSUMS:
+  Mixpanel: f4d71ac2a306e7cda6ad03d4a2be249a0fd7a967
   Realm: 4267bae2eb7cf4a1e06ef3dfa7fe96024b28074c
   RealmSwift: af48a8dea1a60b6e890be94148bece9432487b56
 

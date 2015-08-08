@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Mixpanel
 
 class RedViewController: UIViewController {
 
@@ -28,7 +29,11 @@ class RedViewController: UIViewController {
         }
     }
     
-    //var group: AGroup!
+    @IBAction func newButtonTapped(sender: AnyObject) {
+        let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+        mixpanel.track("New Red button tapped")
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
