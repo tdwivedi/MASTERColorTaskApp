@@ -19,7 +19,7 @@ class RedTableViewCell: UITableViewCell {
     
     var checked: Bool?
     
-    var task: ATask? {
+    var task: RTask? {
         didSet {
             if let task = task, taskLabel = taskLabel, endDateLabel = endDateLabel {
                 taskLabel.text = task.taskContent
@@ -29,13 +29,33 @@ class RedTableViewCell: UITableViewCell {
     }
     
     @IBAction func checkedButtonTapped(sender: AnyObject) {
-        if !checked! {
-            checkedButton.setImage(UIImage(named: "checked_box"), forState: .Normal)
+        /*if !checked! {
+            Realm().write {
+                self.checkedButton.setImage(UIImage(named: "checked_box"), forState: .Normal)
+                self.task?.isDone = true
+            }
             checked = true
         }
         else {
             checkedButton.setImage(UIImage(named: "unchecked_box"), forState: .Normal)
             checked = false
+            Realm().write {
+                task?.isDone = false
+            }
+        }*/
+        if self.task?.isDone == false {
+            Realm().write {
+                self.checkedButton.setImage(UIImage(named: "checked_box"), forState: .Normal)
+                self.task?.isDone = true
+                Realm().add(self.task!)
+            }
+        }
+        else {
+            Realm().write {
+                self.checkedButton.setImage(UIImage(named: "unchecked_box"), forState: .Normal)
+                self.task?.isDone = false
+                Realm().add(self.task!)
+            }
         }
     }
     

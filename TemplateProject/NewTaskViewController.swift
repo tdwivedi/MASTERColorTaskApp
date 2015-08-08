@@ -8,13 +8,13 @@
 
 import UIKit
 
-class NewTaskViewController: UIViewController {
+class NewTaskViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var taskTextField: UITextField!
     
     @IBOutlet weak var endDateTextField: UITextField!
     
-    var currentTask:ATask!
+    var currentTask:RTask!
 
     /*// MARK: - Navigation
     
@@ -27,13 +27,19 @@ class NewTaskViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.taskTextField.delegate = self
+        self.endDateTextField.delegate = self
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 
 }

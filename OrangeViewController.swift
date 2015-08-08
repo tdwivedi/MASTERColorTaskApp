@@ -15,31 +15,38 @@ class OrangeViewController: UIViewController {
     
     @IBOutlet weak var orangeTableView: UITableView!
     
-    var aaaGroupName = ""
+    var aaaGroupName = "Coming Up"
     var newTaskName = ""
     var newEndDate = ""
     
-    var selectedTask:ATask!
+    var selectedTask:OTask!
     
-    var tasks: Results<ATask>! {
+    var Otasks: Results<OTask>! {
         didSet {
             // Whenever notes update, update the table view
             orangeTableView?.reloadData()
         }
     }
     
-    var group: AGroup!
+    //var group: AGroup!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         groupName.text = aaaGroupName
         orangeTableView.dataSource = self
         orangeTableView.delegate = self
+        self.orangeTableView.estimatedRowHeight = 77
+        self.orangeTableView.rowHeight = UITableViewAutomaticDimension
         //let realm = Realm()
         /*realm.write() {
         realm.add(self.aaaGroupName) //currentTask
         }*/
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.orangeTableView.reloadData()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -48,7 +55,7 @@ class OrangeViewController: UIViewController {
         realm.write() {
         realm.add(self.group)
         }*/
-        tasks = realm.objects(ATask)
+        Otasks = realm.objects(OTask)
         super.viewWillAppear(animated)
     }
     
@@ -61,23 +68,23 @@ class OrangeViewController: UIViewController {
         if let identifier = segue.identifier {
             let realm = Realm()
             switch identifier {
-            case "Add":
-                let source = segue.sourceViewController as! NewTaskViewController
+            case "OrangeAdd":
+                let source = segue.sourceViewController as! OrangeNewTaskViewController
                 newTaskName = source.taskTextField.text
                 newEndDate = source.endDateTextField.text
                 
-                source.currentTask = ATask()
+                source.currentTask = OTask()
                 source.currentTask.taskContent = source.taskTextField.text
                 source.currentTask.endDateContent = source.endDateTextField.text
                 realm.write {
                     realm.add(source.currentTask!)
                 }
-            case "Back":
+            case "OrangeBack":
                 println("do nothing")
             default:
                 println("o k")
             }
-            tasks = realm.objects(ATask)
+            Otasks = realm.objects(OTask)
         }
     }
     
@@ -99,16 +106,29 @@ extension OrangeViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("OrangeTaskCell", forIndexPath: indexPath) as! OrangeTableViewCell
         
         let row = indexPath.row
-        let task = tasks[row] as ATask
+        let task = Otasks[row] as OTask
         cell.task = task
         
-        cell.checked = false
+        if task.isDone {
+            cell.checkedButton.setImage(UIImage(named: "checked_box"), forState: .Normal)
+        }
+        else {
+            cell.checkedButton.setImage(UIImage(named: "unchecked_box"), forState: .Normal)
+        }
         
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Int(tasks?.count ?? 0)
+        return Int(Otasks?.count ?? 0)
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 77
     }
     
 }
@@ -116,7 +136,7 @@ extension OrangeViewController: UITableViewDataSource {
 extension OrangeViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        selectedTask = tasks[indexPath.row]
+        selectedTask = Otasks[indexPath.row]
     }
     
     // 3
@@ -127,7 +147,7 @@ extension OrangeViewController: UITableViewDelegate {
     // 4
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == .Delete) {
-            let task = tasks[indexPath.row] as ATask
+            let task = Otasks[indexPath.row] as OTask
             
             let realm = Realm()
             
@@ -135,7 +155,7 @@ extension OrangeViewController: UITableViewDelegate {
                 realm.delete(task)
             }
             
-            tasks = realm.objects(ATask)
+            Otasks = realm.objects(OTask)
         }
     }
     

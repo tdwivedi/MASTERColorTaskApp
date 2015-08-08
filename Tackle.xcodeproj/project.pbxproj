@@ -33,29 +33,20 @@
 		62A07D661B1F79F2001F6916 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A07D651B1F79F2001F6916 /* libstdc++.6.dylib */; };
 		62A07D6E1B1F7FB9001F6916 /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62551B7E1B06BFA2000913E4 /* Bond.framework */; };
 		62A07D6F1B1F7FB9001F6916 /* Bond.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 62551B7E1B06BFA2000913E4 /* Bond.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A36EB3FE1B72C99700D65B29 /* ATask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36EB3FD1B72C99700D65B29 /* ATask.swift */; };
-		A36EB4001B72C99C00D65B29 /* AGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36EB3FF1B72C99C00D65B29 /* AGroup.swift */; };
+		A30FB2D71B73FAC7007164DF /* OrangeNewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30FB2D61B73FAC7007164DF /* OrangeNewTaskViewController.swift */; };
+		A30FB30D1B7419AE007164DF /* YellowNewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30FB30C1B7419AE007164DF /* YellowNewTaskViewController.swift */; };
+		A30FB31B1B7553C8007164DF /* RTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30FB31A1B7553C8007164DF /* RTask.swift */; };
+		A30FB31D1B75540A007164DF /* OTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30FB31C1B75540A007164DF /* OTask.swift */; };
+		A30FB31F1B755416007164DF /* YTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30FB31E1B755416007164DF /* YTask.swift */; };
 		A36EB4021B72C9A100D65B29 /* RedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36EB4011B72C9A100D65B29 /* RedTableViewCell.swift */; };
 		A36EB4041B72C9C000D65B29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A36EB4031B72C9C000D65B29 /* Main.storyboard */; };
 		A36EB4071B72C9DA00D65B29 /* RedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36EB4061B72C9DA00D65B29 /* RedViewController.swift */; };
 		A36EB40D1B72CA7900D65B29 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36EB40C1B72CA7900D65B29 /* HomeViewController.swift */; };
-		A36EB40F1B72CA7E00D65B29 /* NewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36EB40E1B72CA7E00D65B29 /* NewGroupViewController.swift */; };
 		A36EB4111B72CA8700D65B29 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36EB4101B72CA8700D65B29 /* NewTaskViewController.swift */; };
-		A36EB4131B72CA8A00D65B29 /* DeleteGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36EB4121B72CA8A00D65B29 /* DeleteGroupViewController.swift */; };
 		A3D6FACE1B73527D0053D146 /* OrangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D6FACD1B73527D0053D146 /* OrangeViewController.swift */; };
 		A3D6FAD01B7352910053D146 /* YellowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D6FACF1B7352910053D146 /* YellowViewController.swift */; };
-		A3D6FAD21B73529C0053D146 /* YellowGreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D6FAD11B73529C0053D146 /* YellowGreenViewController.swift */; };
-		A3D6FAD41B7352A50053D146 /* GreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D6FAD31B7352A50053D146 /* GreenViewController.swift */; };
-		A3D6FAD61B7352B70053D146 /* DarkGreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D6FAD51B7352B70053D146 /* DarkGreenViewController.swift */; };
-		A3D6FAD81B7352C80053D146 /* TealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D6FAD71B7352C80053D146 /* TealViewController.swift */; };
-		A3D6FADA1B7352D00053D146 /* BlueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D6FAD91B7352D00053D146 /* BlueViewController.swift */; };
 		A3D6FADC1B7352F10053D146 /* OrangeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D6FADB1B7352F10053D146 /* OrangeTableViewCell.swift */; };
 		A3D6FADE1B7352FB0053D146 /* YellowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D6FADD1B7352FB0053D146 /* YellowTableViewCell.swift */; };
-		A3D6FAE01B73538A0053D146 /* YellowGreenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D6FADF1B73538A0053D146 /* YellowGreenTableViewCell.swift */; };
-		A3D6FAE21B7353940053D146 /* GreenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D6FAE11B7353940053D146 /* GreenTableViewCell.swift */; };
-		A3D6FAE41B73539F0053D146 /* DarkGreenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D6FAE31B73539F0053D146 /* DarkGreenTableViewCell.swift */; };
-		A3D6FAE61B7353B30053D146 /* TealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D6FAE51B7353B30053D146 /* TealTableViewCell.swift */; };
-		A3D6FAE81B7353BC0053D146 /* BlueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D6FAE71B7353BC0053D146 /* BlueTableViewCell.swift */; };
 		C56F7794F055291A09F8AB68 /* Pods_TemplateProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB4555453A0BA5E2774AC4F /* Pods_TemplateProject.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -178,29 +169,20 @@
 		62A07D651B1F79F2001F6916 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		62C8C1E01B06BD6500DC3EA7 /* TemplateProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TemplateProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C8E5B0B2AC99B08499AC5D7 /* Pods-TemplateProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TemplateProject/Pods-TemplateProject.debug.xcconfig"; sourceTree = "<group>"; };
-		A36EB3FD1B72C99700D65B29 /* ATask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATask.swift; sourceTree = "<group>"; };
-		A36EB3FF1B72C99C00D65B29 /* AGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGroup.swift; sourceTree = "<group>"; };
+		A30FB2D61B73FAC7007164DF /* OrangeNewTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrangeNewTaskViewController.swift; sourceTree = "<group>"; };
+		A30FB30C1B7419AE007164DF /* YellowNewTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YellowNewTaskViewController.swift; sourceTree = "<group>"; };
+		A30FB31A1B7553C8007164DF /* RTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTask.swift; sourceTree = "<group>"; };
+		A30FB31C1B75540A007164DF /* OTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTask.swift; sourceTree = "<group>"; };
+		A30FB31E1B755416007164DF /* YTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTask.swift; sourceTree = "<group>"; };
 		A36EB4011B72C9A100D65B29 /* RedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedTableViewCell.swift; sourceTree = "<group>"; };
 		A36EB4031B72C9C000D65B29 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A36EB4061B72C9DA00D65B29 /* RedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedViewController.swift; sourceTree = SOURCE_ROOT; };
 		A36EB40C1B72CA7900D65B29 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		A36EB40E1B72CA7E00D65B29 /* NewGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGroupViewController.swift; sourceTree = "<group>"; };
 		A36EB4101B72CA8700D65B29 /* NewTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
-		A36EB4121B72CA8A00D65B29 /* DeleteGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteGroupViewController.swift; sourceTree = "<group>"; };
 		A3D6FACD1B73527D0053D146 /* OrangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrangeViewController.swift; sourceTree = SOURCE_ROOT; };
 		A3D6FACF1B7352910053D146 /* YellowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YellowViewController.swift; sourceTree = SOURCE_ROOT; };
-		A3D6FAD11B73529C0053D146 /* YellowGreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YellowGreenViewController.swift; sourceTree = SOURCE_ROOT; };
-		A3D6FAD31B7352A50053D146 /* GreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenViewController.swift; sourceTree = SOURCE_ROOT; };
-		A3D6FAD51B7352B70053D146 /* DarkGreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkGreenViewController.swift; sourceTree = SOURCE_ROOT; };
-		A3D6FAD71B7352C80053D146 /* TealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TealViewController.swift; sourceTree = SOURCE_ROOT; };
-		A3D6FAD91B7352D00053D146 /* BlueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueViewController.swift; sourceTree = SOURCE_ROOT; };
 		A3D6FADB1B7352F10053D146 /* OrangeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrangeTableViewCell.swift; sourceTree = "<group>"; };
 		A3D6FADD1B7352FB0053D146 /* YellowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YellowTableViewCell.swift; sourceTree = "<group>"; };
-		A3D6FADF1B73538A0053D146 /* YellowGreenTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YellowGreenTableViewCell.swift; sourceTree = "<group>"; };
-		A3D6FAE11B7353940053D146 /* GreenTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenTableViewCell.swift; sourceTree = "<group>"; };
-		A3D6FAE31B73539F0053D146 /* DarkGreenTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkGreenTableViewCell.swift; sourceTree = "<group>"; };
-		A3D6FAE51B7353B30053D146 /* TealTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TealTableViewCell.swift; sourceTree = "<group>"; };
-		A3D6FAE71B7353BC0053D146 /* BlueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueTableViewCell.swift; sourceTree = "<group>"; };
 		C0F662D4E9B18BC8FC2FC5CE /* Pods-TemplateProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-TemplateProject/Pods-TemplateProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -243,15 +225,15 @@
 				A36EB4031B72C9C000D65B29 /* Main.storyboard */,
 				624262BD1B4460CB00005CE3 /* ViewController.swift */,
 				624262B31B4460CB00005CE3 /* LaunchScreen.xib */,
+				624262BE1B4460CB00005CE3 /* ViewControllers */,
 				A36EB40C1B72CA7900D65B29 /* HomeViewController.swift */,
-				A36EB40E1B72CA7E00D65B29 /* NewGroupViewController.swift */,
 				A36EB4101B72CA8700D65B29 /* NewTaskViewController.swift */,
-				A36EB4121B72CA8A00D65B29 /* DeleteGroupViewController.swift */,
+				A30FB2D61B73FAC7007164DF /* OrangeNewTaskViewController.swift */,
+				A30FB30C1B7419AE007164DF /* YellowNewTaskViewController.swift */,
 				624262B71B4460CB00005CE3 /* Helpers */,
 				624262BA1B4460CB00005CE3 /* Images.xcassets */,
 				624262BB1B4460CB00005CE3 /* Info.plist */,
 				624262BC1B4460CB00005CE3 /* TemplateProject-Bridging-Header.h */,
-				624262BE1B4460CB00005CE3 /* ViewControllers */,
 			);
 			path = TemplateProject;
 			sourceTree = "<group>";
@@ -351,8 +333,9 @@
 		A36EB3FB1B72C96600D65B29 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				A36EB3FD1B72C99700D65B29 /* ATask.swift */,
-				A36EB3FF1B72C99C00D65B29 /* AGroup.swift */,
+				A30FB31A1B7553C8007164DF /* RTask.swift */,
+				A30FB31C1B75540A007164DF /* OTask.swift */,
+				A30FB31E1B755416007164DF /* YTask.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -363,11 +346,6 @@
 				A36EB4011B72C9A100D65B29 /* RedTableViewCell.swift */,
 				A3D6FADB1B7352F10053D146 /* OrangeTableViewCell.swift */,
 				A3D6FADD1B7352FB0053D146 /* YellowTableViewCell.swift */,
-				A3D6FADF1B73538A0053D146 /* YellowGreenTableViewCell.swift */,
-				A3D6FAE11B7353940053D146 /* GreenTableViewCell.swift */,
-				A3D6FAE31B73539F0053D146 /* DarkGreenTableViewCell.swift */,
-				A3D6FAE51B7353B30053D146 /* TealTableViewCell.swift */,
-				A3D6FAE71B7353BC0053D146 /* BlueTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -378,11 +356,6 @@
 				A36EB4061B72C9DA00D65B29 /* RedViewController.swift */,
 				A3D6FACD1B73527D0053D146 /* OrangeViewController.swift */,
 				A3D6FACF1B7352910053D146 /* YellowViewController.swift */,
-				A3D6FAD11B73529C0053D146 /* YellowGreenViewController.swift */,
-				A3D6FAD31B7352A50053D146 /* GreenViewController.swift */,
-				A3D6FAD51B7352B70053D146 /* DarkGreenViewController.swift */,
-				A3D6FAD71B7352C80053D146 /* TealViewController.swift */,
-				A3D6FAD91B7352D00053D146 /* BlueViewController.swift */,
 			);
 			name = Colors;
 			sourceTree = "<group>";
@@ -437,7 +410,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 62C8C1DB1B06BD6500DC3EA7 /* Build configuration list for PBXProject "TemplateProject" */;
+			buildConfigurationList = 62C8C1DB1B06BD6500DC3EA7 /* Build configuration list for PBXProject "Tackle" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -590,32 +563,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3D6FADA1B7352D00053D146 /* BlueViewController.swift in Sources */,
-				A3D6FAD81B7352C80053D146 /* TealViewController.swift in Sources */,
 				A36EB4021B72C9A100D65B29 /* RedTableViewCell.swift in Sources */,
+				A30FB2D71B73FAC7007164DF /* OrangeNewTaskViewController.swift in Sources */,
 				624262C01B4460CB00005CE3 /* AppDelegate.swift in Sources */,
 				624262C41B4460CB00005CE3 /* ParseLoginHelper.swift in Sources */,
 				A3D6FADE1B7352FB0053D146 /* YellowTableViewCell.swift in Sources */,
 				A36EB4111B72CA8700D65B29 /* NewTaskViewController.swift in Sources */,
-				A3D6FAE21B7353940053D146 /* GreenTableViewCell.swift in Sources */,
-				A3D6FAD41B7352A50053D146 /* GreenViewController.swift in Sources */,
-				A36EB3FE1B72C99700D65B29 /* ATask.swift in Sources */,
-				A3D6FAE01B73538A0053D146 /* YellowGreenTableViewCell.swift in Sources */,
 				A36EB4071B72C9DA00D65B29 /* RedViewController.swift in Sources */,
-				A3D6FAD21B73529C0053D146 /* YellowGreenViewController.swift in Sources */,
+				A30FB31B1B7553C8007164DF /* RTask.swift in Sources */,
 				A3D6FACE1B73527D0053D146 /* OrangeViewController.swift in Sources */,
-				A36EB40F1B72CA7E00D65B29 /* NewGroupViewController.swift in Sources */,
+				A30FB31D1B75540A007164DF /* OTask.swift in Sources */,
 				A36EB40D1B72CA7900D65B29 /* HomeViewController.swift in Sources */,
-				A36EB4001B72C99C00D65B29 /* AGroup.swift in Sources */,
 				A3D6FAD01B7352910053D146 /* YellowViewController.swift in Sources */,
-				A3D6FAE61B7353B30053D146 /* TealTableViewCell.swift in Sources */,
+				A30FB31F1B755416007164DF /* YTask.swift in Sources */,
 				A3D6FADC1B7352F10053D146 /* OrangeTableViewCell.swift in Sources */,
-				A36EB4131B72CA8A00D65B29 /* DeleteGroupViewController.swift in Sources */,
 				624262C71B4460CB00005CE3 /* ViewController.swift in Sources */,
-				A3D6FAE41B73539F0053D146 /* DarkGreenTableViewCell.swift in Sources */,
-				A3D6FAD61B7352B70053D146 /* DarkGreenViewController.swift in Sources */,
+				A30FB30D1B7419AE007164DF /* YellowNewTaskViewController.swift in Sources */,
 				624262C31B4460CB00005CE3 /* ErrorHandling.swift in Sources */,
-				A3D6FAE81B7353BC0053D146 /* BlueTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -773,7 +737,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		62C8C1DB1B06BD6500DC3EA7 /* Build configuration list for PBXProject "TemplateProject" */ = {
+		62C8C1DB1B06BD6500DC3EA7 /* Build configuration list for PBXProject "Tackle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				62C8C1FD1B06BD6500DC3EA7 /* Debug */,

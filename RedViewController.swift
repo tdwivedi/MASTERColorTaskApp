@@ -15,31 +15,39 @@ class RedViewController: UIViewController {
     
     @IBOutlet weak var redTableView: UITableView!
     
-    var aaaGroupName = ""
+    var aaaGroupName = "Right Away"
     var newTaskName = ""
     var newEndDate = ""
     
-    var selectedTask:ATask!
+    var selectedTask:RTask!
     
-    var tasks: Results<ATask>! {
+    var tasks: Results<RTask>! {
         didSet {
             // Whenever notes update, update the table view
             redTableView?.reloadData()
         }
     }
     
-    var group: AGroup!
+    //var group: AGroup!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         groupName.text = aaaGroupName
         redTableView.dataSource = self
         redTableView.delegate = self
+        redTableView.estimatedRowHeight = 77
+        redTableView.rowHeight = UITableViewAutomaticDimension
+        //self.redTableView.reloadData()
         //let realm = Realm()
         /*realm.write() {
             realm.add(self.aaaGroupName) //currentTask
         }*/
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        redTableView.reloadData()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -48,7 +56,7 @@ class RedViewController: UIViewController {
         realm.write() {
             realm.add(self.group)
         }*/
-        tasks = realm.objects(ATask)
+        tasks = realm.objects(RTask)
         super.viewWillAppear(animated)
     }
 
@@ -66,7 +74,7 @@ class RedViewController: UIViewController {
                 newTaskName = source.taskTextField.text
                 newEndDate = source.endDateTextField.text
                 
-                source.currentTask = ATask()
+                source.currentTask = RTask()
                 source.currentTask.taskContent = source.taskTextField.text
                 source.currentTask.endDateContent = source.endDateTextField.text
                 realm.write {
@@ -77,7 +85,7 @@ class RedViewController: UIViewController {
             default:
                 println("o k")
             }
-            tasks = realm.objects(ATask)
+            tasks = realm.objects(RTask)
         }
     }
 
@@ -99,16 +107,29 @@ extension RedViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("TaskCell", forIndexPath: indexPath) as! RedTableViewCell
         
         let row = indexPath.row
-        let task = tasks[row] as ATask
+        let task = tasks[row] as RTask
         cell.task = task
         
-        cell.checked = false
+        if task.isDone {
+            cell.checkedButton.setImage(UIImage(named: "checked_box"), forState: .Normal)
+        }
+        else {
+            cell.checkedButton.setImage(UIImage(named: "unchecked_box"), forState: .Normal)
+        }
         
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Int(tasks?.count ?? 0)
+    }
+    
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 77
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
     
 }
@@ -127,7 +148,7 @@ extension RedViewController: UITableViewDelegate {
     // 4
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == .Delete) {
-            let task = tasks[indexPath.row] as ATask
+            let task = tasks[indexPath.row] as RTask
             
             let realm = Realm()
             
@@ -135,7 +156,7 @@ extension RedViewController: UITableViewDelegate {
                 realm.delete(task)
             }
 
-            tasks = realm.objects(ATask)
+            tasks = realm.objects(RTask)
         }
     }
     

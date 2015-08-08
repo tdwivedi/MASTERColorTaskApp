@@ -17,7 +17,7 @@
                BlueprintIdentifier = "62C8C1DF1B06BD6500DC3EA7"
                BuildableName = "TemplateProject.app"
                BlueprintName = "TemplateProject"
-               ReferencedContainer = "container:TemplateProject.xcodeproj">
+               ReferencedContainer = "container:Tackle.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
             BlueprintIdentifier = "62C8C1DF1B06BD6500DC3EA7"
             BuildableName = "TemplateProject.app"
             BlueprintName = "TemplateProject"
-            ReferencedContainer = "container:TemplateProject.xcodeproj">
+            ReferencedContainer = "container:Tackle.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -55,7 +55,7 @@
             BlueprintIdentifier = "62C8C1DF1B06BD6500DC3EA7"
             BuildableName = "TemplateProject.app"
             BlueprintName = "TemplateProject"
-            ReferencedContainer = "container:TemplateProject.xcodeproj">
+            ReferencedContainer = "container:Tackle.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,7 +74,7 @@
             BlueprintIdentifier = "62C8C1DF1B06BD6500DC3EA7"
             BuildableName = "TemplateProject.app"
             BlueprintName = "TemplateProject"
-            ReferencedContainer = "container:TemplateProject.xcodeproj">
+            ReferencedContainer = "container:Tackle.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
