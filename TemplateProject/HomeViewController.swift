@@ -40,7 +40,7 @@ class HomeViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "Info" {
+        /*if segue.identifier == "Info" {
             let mixpanel: Mixpanel = Mixpanel.sharedInstance()
             mixpanel.track("Information button tapped")
         }
@@ -54,6 +54,19 @@ class HomeViewController: UIViewController {
         }
         if segue.identifier == "Yellow" {
             let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+            mixpanel.track("Yellow button tapped")
+        }*/
+        let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+        if segue.identifier == "Info" {
+            mixpanel.track("Information button tapped")
+        }
+        if segue.identifier == "Red" {
+            mixpanel.track("Red button tapped")
+        }
+        if segue.identifier == "Orange" {
+            mixpanel.track("Orange button tapped")
+        }
+        if segue.identifier == "Yellow" {
             mixpanel.track("Yellow button tapped")
         }
     }
