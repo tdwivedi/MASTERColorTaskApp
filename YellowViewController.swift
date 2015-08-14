@@ -81,7 +81,7 @@ class YellowViewController: UIViewController {
         
         newTaskName = cell.taskLabel.text!
         newEndDate = cell.endDateLabel.text!
-        isChecked = task.isDone
+        isChecked = cell.task?.isDone
         
         performSegueWithIdentifier("ShowYellowTask", sender: self)
     }
@@ -124,10 +124,10 @@ class YellowViewController: UIViewController {
             destination.notesTextView.text
             }*/
             if isChecked == false {
-            destination.currentStatus = "Not Done"
+                destination.currentStatus = "Not Done"
             }
             else {
-            destination.currentStatus = "Finished"
+                destination.currentStatus = "Finished"
             }
         }
     }

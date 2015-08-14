@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OrangeTaskDisplayViewController: UIViewController, UITextViewDelegate {
+class OrangeTaskDisplayViewController: UIViewController {
     
     @IBOutlet weak var statusLabel: UILabel!
     var currentStatus: String!
@@ -34,17 +34,23 @@ class OrangeTaskDisplayViewController: UIViewController, UITextViewDelegate {
         taskContentLabel.text = taskText
         endDateLabel.text = endDate
         
+        if statusLabel.text == "Not Done" {
+            statusLabel.textColor = UIColor.redColor()
+        } else {
+            statusLabel.textColor = UIColor.greenColor()
+        }
+        
         //currentCurrentTask = OTask()
         //currentCurrentTask.extraNotes = notesTextView.text
         
-        var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
-        view.addGestureRecognizer(tap)
+        /*var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+        view.addGestureRecognizer(tap)*/
         // Do any additional setup after loading the view.
     }
     
-    func DismissKeyboard() {
+    /*func DismissKeyboard() {
         //notesTextView.endEditing(true)
-    }
+    }*/
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

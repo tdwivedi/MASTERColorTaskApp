@@ -21,6 +21,7 @@ class RedViewController: UIViewController, UITableViewDelegate {
     var newTaskName: String!
     var newEndDate: String!
     var isChecked: Bool!
+    var extraNotesString: String!
     
     var selectedTask:RTask!
     
@@ -92,7 +93,10 @@ class RedViewController: UIViewController, UITableViewDelegate {
                 }
             case "BackToRed":
                 let source = segue.sourceViewController as! RedTaskDisplayViewController
-                
+                /*Realm().write {
+                    source.currentCurrentTask.extraNotes = source.notesTextView.text
+                    Realm().add(source.currentCurrentTask)
+                }*/
             case "Back":
                 println("do nothing")
             default:
@@ -111,10 +115,12 @@ class RedViewController: UIViewController, UITableViewDelegate {
         var row = indexPath.row
         let task = tasks[row] as RTask
         cell.task = task
+        selectedTask = task
         
         newTaskName = cell.taskLabel.text!
         newEndDate = cell.endDateLabel.text!
         isChecked = cell.task?.isDone
+        //extraNotesString = cell.task?.extraNotes
         
         performSegueWithIdentifier("ShowRedTask", sender: self)
     }
@@ -128,6 +134,7 @@ class RedViewController: UIViewController, UITableViewDelegate {
             destination.taskText = newTaskName
             destination.endDate = newEndDate
             
+            destination.currentCurrentTask = selectedTask
             //destination.currentCurrentTask = selectedTask
             /*Realm().write {
                 destination.notesTextView.text

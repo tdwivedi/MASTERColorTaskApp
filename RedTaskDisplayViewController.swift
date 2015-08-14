@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import RealmSwift
 
-class RedTaskDisplayViewController: UIViewController, UITextViewDelegate {
+class RedTaskDisplayViewController: UIViewController {
 
     @IBOutlet weak var statusLabel: UILabel!
     var currentStatus: String!
@@ -19,33 +20,43 @@ class RedTaskDisplayViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var endDateLabel: UILabel!
     var endDate: String!
     
-    @IBOutlet weak var notesTextView: UITextView!
-    var notesText: String!
+    //@IBOutlet weak var notesTextView: UITextView!
+    //var notesText: String!
     
     var currentCurrentTask: RTask!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        notesTextView.delegate = self
-        notesTextView.layer.borderWidth = 1
-        notesTextView.layer.borderColor = UIColor.grayColor().CGColor
+        //notesTextView.delegate = self
+        //notesTextView.layer.borderWidth = 1
+        //notesTextView.layer.borderColor = UIColor.grayColor().CGColor
         
-        statusLabel.text = currentStatus
         taskContentLabel.text = taskText
         endDateLabel.text = endDate
+        
+        statusLabel.text = currentStatus
+        if statusLabel.text == "Not Done" {
+            statusLabel.textColor = UIColor.redColor()
+        } else {
+            statusLabel.textColor = UIColor.greenColor()
+        }
+        
         //notesTextView.text = notesText
         
-        currentCurrentTask = RTask()
-        currentCurrentTask.extraNotes = notesTextView.text
         
-        var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
-        view.addGestureRecognizer(tap)
+//        Realm().write {
+//            self.currentCurrentTask.extraNotes = self.notesTextView.text
+//            Realm().add(self.currentCurrentTask)
+//        }
+        
+        /*var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+        view.addGestureRecognizer(tap)*/
         // Do any additional setup after loading the view.
     }
     
-    func DismissKeyboard() {
+    /*func DismissKeyboard() {
         notesTextView.endEditing(true)
-    }
+    }*/
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

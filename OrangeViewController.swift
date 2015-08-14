@@ -81,7 +81,7 @@ class OrangeViewController: UIViewController, UITableViewDelegate {
         
         newTaskName = cell.taskLabel.text!
         newEndDate = cell.endDateLabel.text!
-        isChecked = task.isDone
+        isChecked = cell.task?.isDone
         
         performSegueWithIdentifier("ShowOrangeTask", sender: self)
     }
