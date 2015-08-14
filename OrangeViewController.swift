@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import Mixpanel
 
-class OrangeViewController: UIViewController {
+class OrangeViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var groupName: UILabel!
     
@@ -19,6 +19,7 @@ class OrangeViewController: UIViewController {
     var aaaGroupName = "Coming Up"
     var newTaskName = ""
     var newEndDate = ""
+    var isChecked: Bool!
     
     var selectedTask:OTask!
     
@@ -69,6 +70,22 @@ class OrangeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //selectedTask = Otasks[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("OrangeTaskCell", forIndexPath: indexPath) as! OrangeTableViewCell
+        
+        var row = indexPath.row
+        let task = Otasks[row] as OTask
+        cell.task = task
+        
+        newTaskName = cell.taskLabel.text!
+        newEndDate = cell.endDateLabel.text!
+        isChecked = task.isDone
+        
+        performSegueWithIdentifier("ShowOrangeTask", sender: self)
+    }
+    
     @IBAction func unwindToSegue(segue: UIStoryboardSegue) {
         if let identifier = segue.identifier {
             let realm = Realm()
@@ -93,15 +110,27 @@ class OrangeViewController: UIViewController {
         }
     }
     
-    /*
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+        if segue.identifier == "ShowOrangeTask" {
+            let destination = segue.destinationViewController as! OrangeTaskDisplayViewController
+            destination.taskText = newTaskName
+            destination.endDate = newEndDate
+            
+            //destination.currentCurrentTask = selectedTask
+            /*Realm().write {
+                destination.notesTextView.text
+            }*/
+            if isChecked == false {
+            destination.currentStatus = "Not Done"
+            }
+            else {
+            destination.currentStatus = "Finished"
+            }
+        }
     }
-    */
     
 }
 
@@ -140,9 +169,9 @@ extension OrangeViewController: UITableViewDataSource {
 
 extension OrangeViewController: UITableViewDelegate {
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    /*func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selectedTask = Otasks[indexPath.row]
-    }
+    }*/
     
     // 3
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

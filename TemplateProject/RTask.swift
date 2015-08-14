@@ -14,5 +14,5 @@ class RTask: Object { //Object (for realm)
     dynamic var taskContent = ""
     dynamic var endDateContent = ""
     dynamic var isDone = false
-    
+    dynamic var extraNotes = ""
 }

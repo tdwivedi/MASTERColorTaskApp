@@ -19,6 +19,7 @@ class YellowViewController: UIViewController {
     var aaaGroupName = "In the Future"
     var newTaskName = ""
     var newEndDate = ""
+    var isChecked: Bool!
     
     var selectedTask:YTask!
     
@@ -69,6 +70,22 @@ class YellowViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //selectedTask = Ytasks[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("YellowTaskCell", forIndexPath: indexPath) as! YellowTableViewCell
+        
+        var row = indexPath.row
+        let task = Ytasks[row] as YTask
+        cell.task = task
+        
+        newTaskName = cell.taskLabel.text!
+        newEndDate = cell.endDateLabel.text!
+        isChecked = task.isDone
+        
+        performSegueWithIdentifier("ShowYellowTask", sender: self)
+    }
+    
     @IBAction func unwindToSegue(segue: UIStoryboardSegue) {
         if let identifier = segue.identifier {
             let realm = Realm()
@@ -93,15 +110,27 @@ class YellowViewController: UIViewController {
         }
     }
     
-    /*
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+        if segue.identifier == "ShowYellowTask" {
+            let destination = segue.destinationViewController as! YellowTaskDisplayViewController
+            destination.taskText = newTaskName
+            destination.endDate = newEndDate
+            
+            //destination.currentCurrentTask = selectedTask
+            /*Realm().write {
+            destination.notesTextView.text
+            }*/
+            if isChecked == false {
+            destination.currentStatus = "Not Done"
+            }
+            else {
+            destination.currentStatus = "Finished"
+            }
+        }
     }
-    */
     
 }
 
@@ -113,7 +142,7 @@ extension YellowViewController: UITableViewDataSource {
         let row = indexPath.row
         let task = Ytasks[row] as YTask
         cell.task = task
-        
+         
         if task.isDone {
             cell.checkedButton.setImage(UIImage(named: "checked_box"), forState: .Normal)
         }
@@ -140,9 +169,9 @@ extension YellowViewController: UITableViewDataSource {
 
 extension YellowViewController: UITableViewDelegate {
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        selectedTask = Ytasks[indexPath.row]
-    }
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        selectedTask = Ytasks[indexPath.row]
+//    }
     
     // 3
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

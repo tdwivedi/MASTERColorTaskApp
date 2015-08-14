@@ -10,15 +10,17 @@ import UIKit
 import RealmSwift
 import Mixpanel
 
-class RedViewController: UIViewController {
+class RedViewController: UIViewController, UITableViewDelegate {
 
     @IBOutlet weak var groupName: UILabel!
     
     @IBOutlet weak var redTableView: UITableView!
     
+    //add properties that are in cell to use for prepare for segue to display
     var aaaGroupName = "Right Away"
-    var newTaskName = ""
-    var newEndDate = ""
+    var newTaskName: String!
+    var newEndDate: String!
+    var isChecked: Bool!
     
     var selectedTask:RTask!
     
@@ -37,6 +39,9 @@ class RedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //redTableView.separatorStyle = UITableViewCellSeparatorStyleNone
+        
         groupName.text = aaaGroupName
         redTableView.dataSource = self
         redTableView.delegate = self
@@ -85,6 +90,9 @@ class RedViewController: UIViewController {
                 realm.write {
                     realm.add(source.currentTask!)
                 }
+            case "BackToRed":
+                let source = segue.sourceViewController as! RedTaskDisplayViewController
+                
             case "Back":
                 println("do nothing")
             default:
@@ -93,16 +101,46 @@ class RedViewController: UIViewController {
             tasks = realm.objects(RTask)
         }
     }
+    
 
-    /*
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //selectedTask = tasks[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("TaskCell", forIndexPath: indexPath) as! RedTableViewCell
+        
+        var row = indexPath.row
+        let task = tasks[row] as RTask
+        cell.task = task
+        
+        newTaskName = cell.taskLabel.text!
+        newEndDate = cell.endDateLabel.text!
+        isChecked = cell.task?.isDone
+        
+        performSegueWithIdentifier("ShowRedTask", sender: self)
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ShowRedTask" {
+            let destination = segue.destinationViewController as! RedTaskDisplayViewController
+            destination.taskText = newTaskName
+            destination.endDate = newEndDate
+            
+            //destination.currentCurrentTask = selectedTask
+            /*Realm().write {
+                destination.notesTextView.text
+            }*/
+            if isChecked == false {
+                destination.currentStatus = "Not Done"
+            }
+            else {
+                destination.currentStatus = "Finished"
+            }
+        }
     }
-    */
+
 
 }
 
@@ -114,6 +152,7 @@ extension RedViewController: UITableViewDataSource {
         let row = indexPath.row
         let task = tasks[row] as RTask
         cell.task = task
+        //cell.task?.extraNotes =
         
         if task.isDone {
             cell.checkedButton.setImage(UIImage(named: "checked_box"), forState: .Normal)
@@ -124,7 +163,7 @@ extension RedViewController: UITableViewDataSource {
         
         return cell
     }
-    
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Int(tasks?.count ?? 0)
     }
@@ -141,9 +180,23 @@ extension RedViewController: UITableViewDataSource {
 
 extension RedViewController: UITableViewDelegate {
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        selectedTask = tasks[indexPath.row]
-    }
+    /*func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //selectedTask = tasks[indexPath.row]
+        
+        //let cell = tableView.dequeueReusableCellWithIdentifier("TaskCell", forIndexPath: indexPath) as! RedTableViewCell
+        
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! RedTableViewCell
+        
+        var row = indexPath.row
+        let task = tasks[row] as RTask
+        cell.task = task
+        
+        newTaskName = cell.taskLabel.text!
+        newEndDate = cell.endDateLabel.text!
+        isChecked = cell.task!.isDone
+        
+        performSegueWithIdentifier("ShowRedTask", sender: self)
+    }*/
     
     // 3
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

@@ -38,6 +38,13 @@
 		A30FB31B1B7553C8007164DF /* RTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30FB31A1B7553C8007164DF /* RTask.swift */; };
 		A30FB31D1B75540A007164DF /* OTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30FB31C1B75540A007164DF /* OTask.swift */; };
 		A30FB31F1B755416007164DF /* YTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30FB31E1B755416007164DF /* YTask.swift */; };
+		A3480D521B7A84BA004F3129 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3480D511B7A84BA004F3129 /* CFNetwork.framework */; };
+		A3480D541B7A84C7004F3129 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3480D531B7A84C7004F3129 /* CoreGraphics.framework */; };
+		A3480D561B7A84DF004F3129 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3480D551B7A84DF004F3129 /* QuartzCore.framework */; };
+		A3480D581B7A84EC004F3129 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3480D571B7A84EC004F3129 /* Security.framework */; };
+		A3480D5A1B7A84F8004F3129 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3480D591B7A84F8004F3129 /* StoreKit.framework */; };
+		A3480D5C1B7A8511004F3129 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A3480D5B1B7A8511004F3129 /* libz.dylib */; };
+		A3480D5E1B7AB2CE004F3129 /* RedTaskDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3480D5D1B7AB2CE004F3129 /* RedTaskDisplayViewController.swift */; };
 		A36EB4021B72C9A100D65B29 /* RedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36EB4011B72C9A100D65B29 /* RedTableViewCell.swift */; };
 		A36EB4041B72C9C000D65B29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A36EB4031B72C9C000D65B29 /* Main.storyboard */; };
 		A36EB4071B72C9DA00D65B29 /* RedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36EB4061B72C9DA00D65B29 /* RedViewController.swift */; };
@@ -47,6 +54,8 @@
 		A3D6FAD01B7352910053D146 /* YellowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D6FACF1B7352910053D146 /* YellowViewController.swift */; };
 		A3D6FADC1B7352F10053D146 /* OrangeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D6FADB1B7352F10053D146 /* OrangeTableViewCell.swift */; };
 		A3D6FADE1B7352FB0053D146 /* YellowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D6FADD1B7352FB0053D146 /* YellowTableViewCell.swift */; };
+		A3E2158C1B7D45AB0093B3DC /* OrangeTaskDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2158B1B7D45AA0093B3DC /* OrangeTaskDisplayViewController.swift */; };
+		A3E2158E1B7D65240093B3DC /* YellowTaskDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2158D1B7D65240093B3DC /* YellowTaskDisplayViewController.swift */; };
 		C56F7794F055291A09F8AB68 /* Pods_TemplateProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB4555453A0BA5E2774AC4F /* Pods_TemplateProject.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -174,6 +183,13 @@
 		A30FB31A1B7553C8007164DF /* RTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTask.swift; sourceTree = "<group>"; };
 		A30FB31C1B75540A007164DF /* OTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTask.swift; sourceTree = "<group>"; };
 		A30FB31E1B755416007164DF /* YTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTask.swift; sourceTree = "<group>"; };
+		A3480D511B7A84BA004F3129 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		A3480D531B7A84C7004F3129 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A3480D551B7A84DF004F3129 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A3480D571B7A84EC004F3129 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		A3480D591B7A84F8004F3129 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		A3480D5B1B7A8511004F3129 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		A3480D5D1B7AB2CE004F3129 /* RedTaskDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedTaskDisplayViewController.swift; sourceTree = SOURCE_ROOT; };
 		A36EB4011B72C9A100D65B29 /* RedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedTableViewCell.swift; sourceTree = "<group>"; };
 		A36EB4031B72C9C000D65B29 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A36EB4061B72C9DA00D65B29 /* RedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -183,6 +199,8 @@
 		A3D6FACF1B7352910053D146 /* YellowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YellowViewController.swift; sourceTree = SOURCE_ROOT; };
 		A3D6FADB1B7352F10053D146 /* OrangeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrangeTableViewCell.swift; sourceTree = "<group>"; };
 		A3D6FADD1B7352FB0053D146 /* YellowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YellowTableViewCell.swift; sourceTree = "<group>"; };
+		A3E2158B1B7D45AA0093B3DC /* OrangeTaskDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrangeTaskDisplayViewController.swift; sourceTree = SOURCE_ROOT; };
+		A3E2158D1B7D65240093B3DC /* YellowTaskDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YellowTaskDisplayViewController.swift; sourceTree = SOURCE_ROOT; };
 		C0F662D4E9B18BC8FC2FC5CE /* Pods-TemplateProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-TemplateProject/Pods-TemplateProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -191,12 +209,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62A07D661B1F79F2001F6916 /* libstdc++.6.dylib in Frameworks */,
 				62551BA21B06C373000913E4 /* libsqlite3.dylib in Frameworks */,
-				62551BA01B06C35B000913E4 /* AudioToolbox.framework in Frameworks */,
-				62551B9E1B06C354000913E4 /* MobileCoreServices.framework in Frameworks */,
+				A3480D5C1B7A8511004F3129 /* libz.dylib in Frameworks */,
 				62551B9C1B06C327000913E4 /* SystemConfiguration.framework in Frameworks */,
+				A3480D5A1B7A84F8004F3129 /* StoreKit.framework in Frameworks */,
+				A3480D581B7A84EC004F3129 /* Security.framework in Frameworks */,
+				A3480D561B7A84DF004F3129 /* QuartzCore.framework in Frameworks */,
 				62551B9A1B06C31F000913E4 /* CoreLocation.framework in Frameworks */,
+				A3480D541B7A84C7004F3129 /* CoreGraphics.framework in Frameworks */,
+				A3480D521B7A84BA004F3129 /* CFNetwork.framework in Frameworks */,
+				62551BA01B06C35B000913E4 /* AudioToolbox.framework in Frameworks */,
+				62A07D661B1F79F2001F6916 /* libstdc++.6.dylib in Frameworks */,
+				62551B9E1B06C354000913E4 /* MobileCoreServices.framework in Frameworks */,
 				62551B981B06C2FD000913E4 /* Accounts.framework in Frameworks */,
 				62551B961B06C2F5000913E4 /* Social.framework in Frameworks */,
 				62551B941B06C072000913E4 /* ConvenienceKit.framework in Frameworks */,
@@ -252,6 +276,9 @@
 			children = (
 				A36EB4051B72C9CF00D65B29 /* Colors */,
 				624262BF1B4460CB00005CE3 /* FilterViewController */,
+				A3480D5D1B7AB2CE004F3129 /* RedTaskDisplayViewController.swift */,
+				A3E2158B1B7D45AA0093B3DC /* OrangeTaskDisplayViewController.swift */,
+				A3E2158D1B7D65240093B3DC /* YellowTaskDisplayViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -266,6 +293,12 @@
 		62551B621B06BF33000913E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A3480D5B1B7A8511004F3129 /* libz.dylib */,
+				A3480D591B7A84F8004F3129 /* StoreKit.framework */,
+				A3480D571B7A84EC004F3129 /* Security.framework */,
+				A3480D551B7A84DF004F3129 /* QuartzCore.framework */,
+				A3480D531B7A84C7004F3129 /* CoreGraphics.framework */,
+				A3480D511B7A84BA004F3129 /* CFNetwork.framework */,
 				62A07D651B1F79F2001F6916 /* libstdc++.6.dylib */,
 				62551BA11B06C373000913E4 /* libsqlite3.dylib */,
 				62551B9F1B06C35B000913E4 /* AudioToolbox.framework */,
@@ -567,14 +600,17 @@
 				A30FB2D71B73FAC7007164DF /* OrangeNewTaskViewController.swift in Sources */,
 				624262C01B4460CB00005CE3 /* AppDelegate.swift in Sources */,
 				624262C41B4460CB00005CE3 /* ParseLoginHelper.swift in Sources */,
+				A3E2158E1B7D65240093B3DC /* YellowTaskDisplayViewController.swift in Sources */,
 				A3D6FADE1B7352FB0053D146 /* YellowTableViewCell.swift in Sources */,
 				A36EB4111B72CA8700D65B29 /* NewTaskViewController.swift in Sources */,
 				A36EB4071B72C9DA00D65B29 /* RedViewController.swift in Sources */,
 				A30FB31B1B7553C8007164DF /* RTask.swift in Sources */,
+				A3480D5E1B7AB2CE004F3129 /* RedTaskDisplayViewController.swift in Sources */,
 				A3D6FACE1B73527D0053D146 /* OrangeViewController.swift in Sources */,
 				A30FB31D1B75540A007164DF /* OTask.swift in Sources */,
 				A36EB40D1B72CA7900D65B29 /* HomeViewController.swift in Sources */,
 				A3D6FAD01B7352910053D146 /* YellowViewController.swift in Sources */,
+				A3E2158C1B7D45AB0093B3DC /* OrangeTaskDisplayViewController.swift in Sources */,
 				A30FB31F1B755416007164DF /* YTask.swift in Sources */,
 				A3D6FADC1B7352F10053D146 /* OrangeTableViewCell.swift in Sources */,
 				624262C71B4460CB00005CE3 /* ViewController.swift in Sources */,
@@ -706,6 +742,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
 					"$(PROJECT_DIR)/Frameworks/ConvenienceKit/ConvenienceKit/Frameworks",
+					"$(PROJECT_DIR)/parse-library-1",
 				);
 				INFOPLIST_FILE = TemplateProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -731,6 +768,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
 					"$(PROJECT_DIR)/Frameworks/ConvenienceKit/ConvenienceKit/Frameworks",
+					"$(PROJECT_DIR)/parse-library-1",
 				);
 				INFOPLIST_FILE = TemplateProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
